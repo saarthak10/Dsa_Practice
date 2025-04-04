@@ -20,13 +20,23 @@ public class CountFrequencyEachElement {
             if(visited[i] == false){
               visited[i] =true;
                 count++;
+                for(int j = i+1; j< givenArray.length;j++){
+                    if(givenArray[i] == givenArray[j]){
+                        visited[j] = true;
+                        count++;
+                    }
+                }
+                System.out.println(givenArray[i]+"->"+count);
+
+            }else{
+                continue;
             }
         }
     }
 
     public static void main(String[] args){
         
-        int[] arr = {2,3,2,5,4,3,6};
+        int[] arr = {2,3,2,5,5,5,5,4,3,6};
         findFrequencyOfElements(arr);   
     }
 }
