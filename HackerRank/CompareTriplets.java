@@ -1,54 +1,43 @@
- package HackerRank;
+package HackerRank;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class CompareTriplets {
-
-    public static List<Integer> compareTriplets(List<Integer> a, List<Integer> b){
-         
+    
+    public static List<Integer> compareTriplets(List<Integer> a,List<Integer> b){
         ArrayList<Integer> result = new ArrayList<Integer>();
+        result.add(0);
+        result.add(0);
 
-        for(int i=0; i< a.size(); i++){
+        for(int i =0; i< a.size(); i++){
             if(a.get(i) > b.get(i)){
-                if(result.size() == 0){
-                    result.add(0,1);
-                }else{
-                    result.add(0, result.get(0) + 1);
-                }
+              int currentValue = result.get(0);
+              result.set(0,currentValue +1);
             }else if (b.get(i) > a.get(i)) {
-                System.out.println("ELEMENTS ALREADY IN THE ARRAY" + result);
-                if(result.size() == 0){
-                    result.add(1,1);
-                }else if( result.size() == i){
-                    result.add(1,1);
-                }else{
-                    result.add(1, result.get(1) + 1);
-                    
-                }
+              int currentValue = result.get(1);
+              result.set(1,currentValue +1);
             }else{
                 continue;
             }
         }
+        System.out.println("RESULT ====>" + result);
 
-        System.out.println("RETURNED ARRAY" + result);
         return result;
-
     }
 
     public static void main(String[] args){
-        ArrayList<Integer> a = new ArrayList<>();
-        a.add(12);
-        a.add(13);
-        a.add(16);
 
+        ArrayList<Integer> a = new ArrayList<>();
+        a.add(13);
+        a.add(10);
+        a.add(14);
         ArrayList<Integer> b = new ArrayList<>();
+        b.add(15);
         b.add(10);
-        b.add(13);
         b.add(16);
 
         compareTriplets(a, b);
-      
-     }
-    
+
+    }
 }
