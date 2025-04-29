@@ -24,8 +24,8 @@ public class NumberLineJumps {
         if(v1<v2){
             return "NO";
         }
-
-        if(x2-x1 % v1-v2 == 0){
+        // check for v1-v2 ==0 as well
+        if((v1-v2 != 0)&&(x2-x1) % (v1-v2) == 0){
             return "YES";
         }else{
             return "NO";
