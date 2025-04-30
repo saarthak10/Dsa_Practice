@@ -2,7 +2,10 @@ package HackerRank;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/*
+ * 
+ * Question Link:- https://www.hackerrank.com/challenges/the-birthday-bar/problem
+ */
 public class SubarrayDivisions {
     
     public static int countElligibleSubArrays(List<Integer> givenArray,int m, int d){
