@@ -25,7 +25,6 @@ public class SubarrayDivisions {
                 divisionsCount++;
             }
         }
-        System.out.println("DIVISIONS COUNT =====>"+ divisionsCount);
         return divisionsCount;
     }
 
