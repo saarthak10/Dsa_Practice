@@ -11,7 +11,6 @@ public class HalloweenSale {
             result++;
             budget = Math.max(m, budget-d);
         }
-        System.out.println("RESULT IS=====>" + result);
         return result;
     }
 
