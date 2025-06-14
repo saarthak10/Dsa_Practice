@@ -1,6 +1,7 @@
 package Hashing.Hashing;
 
 import java.util.Arrays;
+import java.util.HashMap;
 
 /*
  * Question:- You are given an array of size “n” ; 
@@ -35,6 +36,23 @@ public class CountQueryOccurence {
         for(int j=0; j< queries.length;j++){
             System.out.println(hashArray[queries[j]]);
         }
+
+    }
+
+    // Use HashMap
+    public static void mostEfficientSolution(int[] givenArray, int[] queries ){
+        HashMap<Integer, Integer> frequencyMap = new HashMap<>();
+        for(int i=0; i< givenArray.length; i++){
+           int currentFrequency = frequencyMap.getOrDefault(givenArray[i], 0);
+            
+           frequencyMap.put(givenArray[i],currentFrequency + 1);
+        
+        }
+
+        for(int j=0; j< queries.length;j++){
+            System.out.println(frequencyMap.getOrDefault(queries[j],0));
+        }
+
 
     }
 
