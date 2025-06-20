@@ -1,6 +1,7 @@
 package Hashing.Hashing;
 
 import java.util.HashMap;
+import java.util.Map;
 
 /*
  * 
@@ -15,18 +16,18 @@ public class FindMinMaxFrequency {
         int minElement = 0;
         int minCount = Integer.MAX_VALUE;
         for(int i=0; i< givenArray.length; i++){
-            int count =1;
+            int count =0;
             
-            for(int j=i; j< givenArray.length;j++){
+            for(int j=0; j< givenArray.length;j++){
                 if (givenArray[i] == givenArray[j]) {
                     count++;
                 }
             }
-            if (count> maxCount) {
+            if (maxCount < count) {
                 maxCount = count;
                 maxElement = givenArray[i];
             }
-             if (count < minCount) {
+             if (minCount > count) {
                 minCount = count;
                 minElement = givenArray[i];
             }
@@ -39,7 +40,7 @@ public class FindMinMaxFrequency {
 
     public static void findMinMaxFrequencyEfficient(int[] givenArray){
 
-        int maxFreq =0;
+        int maxFreq =Integer.MIN_VALUE;
         int maxElement=0;
         int minFreq = Integer.MAX_VALUE;
         int minElement = 0;
@@ -47,22 +48,26 @@ public class FindMinMaxFrequency {
         for(int i=0; i< givenArray.length;i++){
             int currentFrequency = map.getOrDefault(givenArray[i],0);
             map.put(givenArray[i],currentFrequency+1);
-
-            if (maxFreq < map.get(givenArray[i])) {
-                maxFreq = map.get(givenArray[i]);
-                maxElement = givenArray[i];
-            }
-            if (minFreq > map.get(givenArray[i])) {
-                minFreq = map.get(givenArray[i]);
-                minElement = givenArray[i];
-            }
         }
-          System.out.println("Maximum Frequent Element is===>" + map);
-        // System.out.println("Minimum Frequent Element is===>" + minElement);
+        
+        for(Map.Entry<Integer,Integer> entry: map.entrySet()){
+            
+            if (maxFreq < entry.getValue()) {
+                maxFreq = entry.getValue();
+                maxElement = entry.getKey();
+            }
+            if (minFreq > entry.getValue()) {
+                minFreq = entry.getValue();
+                minElement = entry.getKey();
+            }
+
+        }
+          System.out.println("Maximum Frequent Element is===>" + maxElement);
+         System.out.println("Minimum Frequent Element is===>" + minElement);
     }
     public static void main(String[] args) {
         int[] arr = {3,2,3,2,4,3};
-        FindMinMaxFrequencyBrute(arr);
+        // FindMinMaxFrequencyBrute(arr);
         findMinMaxFrequencyEfficient(arr);
     }
 }
