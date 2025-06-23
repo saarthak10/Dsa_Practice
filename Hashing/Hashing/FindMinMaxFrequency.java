@@ -62,12 +62,11 @@ public class FindMinMaxFrequency {
             }
 
         }
-          System.out.println("Maximum Frequent Element is===>" + maxElement);
-         System.out.println("Minimum Frequent Element is===>" + minElement);
+        System.out.println("Maximum Frequent Element is===>" + maxElement);
+        System.out.println("Minimum Frequent Element is===>" + minElement);
     }
     public static void main(String[] args) {
         int[] arr = {3,2,3,2,4,3};
-        // FindMinMaxFrequencyBrute(arr);
         findMinMaxFrequencyEfficient(arr);
     }
 }
