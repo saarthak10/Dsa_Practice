@@ -66,8 +66,10 @@ public class CheckDuplicatesWithinDistance {
     }
 
     public static void main(String[] args) {
-        int k=3;
+        int k=1;
         int[] arr = {1,2,3,1,4,5};
-        checkDuplicatesExistEff(k, arr);
+        int [] arr2 = {3,1,2,3,2};
+
+        checkDuplicatesExistEff(k, arr2);
     }
 }
