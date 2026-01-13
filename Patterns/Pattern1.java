@@ -14,10 +14,19 @@ public class Pattern1 {
            System.out.println();
        }
     }
+
+    public void printPatternAgain(int n){
+        for(int i=0;i<5;i++){
+            for(int j =0; j<6;j++){
+                System.out.print(0);
+            }
+            System.out.println();
+        }
+    }
      public static void main(String[] args) {
         Pattern1 obj = new Pattern1();
 
-        obj.printPattern();
+        obj.printPatternAgain(4);
      }    
 }
 

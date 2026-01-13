@@ -9,7 +9,17 @@ public class Pattern2 {
               System.out.println();
         }
     }
+
+    public static void printPatternAgain(){
+         System.out.println();
+        for(int i=0; i<4;i++){
+            for(int j=0;j<=i;j++){
+                System.out.print(0);
+            }
+            System.out.println();
+        }
+    }
     public static void main(String[] args){
-        printPattern();
+        printPatternAgain();
     }
 }
