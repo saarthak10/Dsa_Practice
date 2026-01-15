@@ -1,4 +1,4 @@
-package Patterns;
+package Patterns.Pattern_2025;
 
 public class Pattern18 {
 

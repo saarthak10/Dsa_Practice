@@ -1,21 +1,22 @@
-package Patterns;
+package Patterns.Pattern_2025;
 
-public class Pattern13 {
+public class Pattern14 {
      /*
      *   
-     *  1
-     *  2 3
-     *  4 5 6
-     *  7 8 9 10
-     *  11 12 13 14 15 
+     * A
+     * A B
+     * A B C
+     * A B C D
+     * A B C D E
      *       n=5
      */
     public static void printPattern(int n){ 
-        int value = 1;
+        
         for(int i = 1; i<= n ; i++){
+            char value = 'A';
             for(int j =1; j<=i; j++){
                 System.out.print(value + " ");
-                value = value +1;
+                value++;
             }
             System.out.println();
 
